@@ -1,0 +1,3 @@
+We will create a simple app where value is fix inside  the image.
+
+a docker file is used to create a docekr image that runs a shell script automatically when the container starts.
