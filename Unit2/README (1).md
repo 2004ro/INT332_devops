@@ -173,3 +173,19 @@ after creating all these files in folder
 - use docker volume mounting to connect your html file to the container
 
 
+- 2. Imagine you are managing a project with multiple conatiners.Answer the following question.
+- How will you build on image and run a container?
+- How do you save changes made to a running container?
+- How can you go inside containers(for example , a web app and a database)?
+- How to pull image from docker hub
+
+
+-3. you are required to create a customized MYSQL docker image with preloaded datavase and publish it to github container registry(GHCR),then pull snd verify it on another system.
+- Configure the Dockerfile to:
+- set root password using environment variables.*
+create a new database(e.g. college_db)
+- Import a sample SQL file (init.sql) conatining:*
+one table (e.g. students)
+- At least 3 records
+- Build docker image locally
+- Tag the image properly for github conatiner registry
