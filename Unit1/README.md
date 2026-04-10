@@ -68,3 +68,6 @@ A registry is where developers push and pull container images.
 4.  **Push:** `docker push username/myapp:v1.0`
 5.  **Pull (on server):** `docker pull username/myapp:v1.0`
 6.  **Run (on server):** `docker run username/myapp:v1.0`
+
+
+

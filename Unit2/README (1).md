@@ -108,5 +108,68 @@ It is a persistent storage mechanism used by containers to store data.
 
 ## Types of Docker Network
 - a ping is failed because bridge have no isolation
+
+## When to use Host network
 - no port maping needed direct access via local host
+- Ports are exposed directly on host.
+
+## Q. Update the ubuntu container install apache and php,then push updated on to docker hub.
+- docker pull ubuntu
+- docker run -dit --name a1 ubuntu   ##run container
+- docker exec -it a1 bash      ## to enter in the container
+- apt update                    ##Install packages
+- apt install -y apache2 php      ##Install packages
+## Q. Compare the size of base image and updated image after commit.
+
+
+## To build your own image from a docker file
+## THe specific commands you can use in dockerfile are:-
+- FROM,PULL,RUN,CMD
+- ADD:- it helps in copying the data into dockerfile 
+
+Ex:- Create ubuntu docker file
+## Base Image
+FROM ubuntu:latest
+## Maintainer(optional)
+LABEL maintainer="Student demo"
+## Install package
+RUN apt update && apt install -y php
+## Deault command when container runs
+CMD ["echo","Hello Students"]
+
+
+## Question (Partical 3):-crrate a python class or a webapplication and run the python based application in docker so that it can run anywhere without any set up issues 
+- create a one folder mkdir docker _python
+- cd inside this folder
+- checking directories in this folder with "dir"
+- make 3 files,first is app.py,second is requirements.txt,Dockerfile
+- Flask is used for flask framework 
+- @app.route("/") -for home page path
+- host=assessing from outside a container
+- port=app runs on this port
+This is app.py
+from flask import Flask
+app=Flask(__name__)
+@app.route("/")
+def home():
+   return "Hello from docker"
+app.run(host="0.0.0.0",port=5000)
+after creating all these files in folder
+- docker build -t python11
+- docker run -p 5001:5000 python11
+
+
+# 20 marks for execute #10 marks for question written -CA1
+# CA2 -Parctical implementation of concepts-docker,maven,github actions and jenkins
+
+# GHRC
+
+# Question:- 
+- 1. You are assigned a basic devops task to deploy a static web page using docker 
+- your objective is to:
+- pull the latest nginx Dockerimage
+- create a simple HTML page
+- run the container and display the html page using nginx static hosting
+- use docker volume mounting to connect your html file to the container
+
 
